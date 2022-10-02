@@ -1,0 +1,35 @@
+<div class="footer">
+
+  <div class="footer__description">
+    <div class="footer__description-wind">Wind</div>
+
+    <div *ngIf="windDegreeDirection >= 351 || windDegreeDirection <= 10" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, north</div>
+    <div *ngIf="windDegreeDirection >= 11 && windDegreeDirection <=30" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, north-northeast</div>
+    <div *ngIf="windDegreeDirection >= 31 && windDegreeDirection <=50" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, northeast</div>
+    <div *ngIf="windDegreeDirection >= 51 && windDegreeDirection <=70" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, east-northeast</div>
+    <div *ngIf="windDegreeDirection >= 71 && windDegreeDirection <=100" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, east</div>
+    <div *ngIf="windDegreeDirection >= 101 && windDegreeDirection <=120" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, east-southeast</div>
+    <div *ngIf="windDegreeDirection >= 121 && windDegreeDirection <=140" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, southeast</div>
+    <div *ngIf="windDegreeDirection >= 141 && windDegreeDirection <=160" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, south-southeast</div>
+    <div *ngIf="windDegreeDirection >= 161 && windDegreeDirection <=190" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, south</div>
+    <div *ngIf="windDegreeDirection >= 191 && windDegreeDirection <=210" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, south-southwest</div>
+    <div *ngIf="windDegreeDirection >= 211 && windDegreeDirection <=230" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, southwest</div>
+    <div *ngIf="windDegreeDirection >= 231 && windDegreeDirection <=250" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, west-southwest</div>
+    <div *ngIf="windDegreeDirection >= 251 && windDegreeDirection <=280" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, west</div>
+    <div *ngIf="windDegreeDirection >= 281 && windDegreeDirection <=300" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, west-northwest</div>
+    <div *ngIf="windDegreeDirection >= 301 && windDegreeDirection <=320" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, northwest</div>
+    <div *ngIf="windDegreeDirection >= 321 && windDegreeDirection <=350" class="footer__description-wind-value">{{windSpeedValue | number: '1.0-0'}} m/s, north-northwest</div>
+
+  </div>
+
+  <div class="footer__description">
+    <div class="footer__description-pressure footer__description-wind">Pressure</div>
+    <div class="footer__description-pressure-value footer__description-wind-value">{{pressureValue | number: '1.0-0'}} mmHg</div>
+  </div>
+
+  <div class="footer__description">
+    <div class="footer__description-humidity footer__description-wind">Humidity</div>
+    <div class="footer__description-humidity-value footer__description-wind-value">{{humidityValue + '%'}}</div>
+  </div>
+
+</div>

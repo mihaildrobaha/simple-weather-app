@@ -1,0 +1,81 @@
+<div class="header">
+
+  <div *ngIf="!input" class="header__city">
+
+    <div
+    (click)="showInput()"
+     class="header__current-city">{{cityName}}
+    </div>
+    
+    <div class="header__change-city"
+    (click)="showInput()"
+    >
+    Change city</div>
+
+  </div>
+
+  <div *ngIf="input" class="header__header-input">
+
+    <mat-form-field class="example-form-field" appearance="legacy" [formGroup]="form" (ngSubmit)="getForecast()">
+      <mat-label style="color:rgb(255, 255, 255)">Enter city name</mat-label>
+      <input type="text" #myInputRef matInput 
+      (keyup.enter)="getForecast()"
+      (keyup.esc)="cancel()"
+      [formControl]="myControl"
+      [matAutocomplete]="auto"
+      >
+        <mat-autocomplete #auto="matAutocomplete">
+          <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport">
+          <mat-option *cdkVirtualFor="let option of filteredOptions | async" [value]="option" class="example-item" (click)="getForecast()">
+            {{option}}
+          </mat-option>
+        </cdk-virtual-scroll-viewport>
+        </mat-autocomplete>
+      <button type="button" *ngIf="form.value" matSuffix mat-icon-button aria-label="Clear"
+      (click)="form.reset()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button type="submit"
+    (click)="getForecast()"
+    [disabled]="form.get('input')?.invalid"
+     mat-button>Change City
+    </button>
+
+    <button type="button"
+    (click)="cancel()"
+     mat-button>Cancel
+    </button>
+
+    <div *ngIf="form.get('input')?.invalid && form.get('input')?.touched">
+      <small>Поле не может быть пустым</small>
+    </div>
+    
+
+  </div>
+
+    <div class="header__toggle">
+
+      <div class="header__degree-pic">
+        <img class="header__weather-pic-degree" src="../../assets/img/º.png" alt="degree-pic">
+      </div>
+
+      <div class="header__degree-toggle">
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle
+          (click)="toggleToCelcius()"
+          [checked]="celciusToggle"
+          >
+          C</mat-button-toggle>
+          <mat-button-toggle
+          (click)="toggleTofahrenheit()"
+          [checked]="fahrenheitToggle"
+          >
+          F</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+
+    </div>
+
+</div>

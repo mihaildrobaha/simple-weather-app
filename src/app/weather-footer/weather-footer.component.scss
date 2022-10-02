@@ -1,0 +1,43 @@
+.footer{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 40px;
+  &__description-wind{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.6;
+  }
+  &__description-wind-value{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #FFFFFF;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .footer__description-wind{
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .footer__description-wind-value{
+    font-size: 21px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .footer__description-wind{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .footer__description-wind-value{
+    font-size: 18px;
+    line-height: 20px;
+  }
+}

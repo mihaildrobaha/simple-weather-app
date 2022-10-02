@@ -1,0 +1,87 @@
+:host{
+  width: 100%;
+}
+
+.example-viewport {
+  height: 200px;
+}
+
+.example-item {
+  height: 50px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom: 150px;
+  &__header-input{
+    color: #FFFFFF;
+    height: 92px;
+  }
+  &__current-city{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 60px;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+  &__change-city{
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  &__toggle{
+    display: flex;
+  }
+  &__degree-pic{
+    margin-right: 10px;
+  }
+  &__weather-pic-degree{
+    width: 8px;
+  }
+}
+
+:host ::ng-deep .mat-button-toggle-appearance-standard{
+  padding: 0px;
+  line-height: 30px;
+  color:#498CEC;
+  font-size: 18px;
+}
+
+:host ::ng-deep .mat-button-toggle-label-content{
+  line-height: 0px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: rgb(255, 255, 255) !important;
+ }
+
+::ng-deep.mat-form-field-underline {
+  background-color: rgb(255, 255, 255) !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+ background-color: rgb(255, 255, 255) !important;
+}
+
+::ng-deep.example-form-field{
+  color: rgb(255, 255, 255) !important;
+}
+
+@media screen and (max-width: 615px) {
+  .header__toggle{
+    margin: 50px auto 0px auto;
+  }
+  .header{
+    justify-content: center;
+  }
+}

@@ -1,0 +1,54 @@
+<div class="content">
+
+  <div 
+    [ngSwitch]="weatherDescription" 
+    class="content__weather">
+
+    <div *ngSwitchCase="'broken clouds'" class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/cloudy.png" alt="waether-pic">
+    </div>
+    <div *ngSwitchCase="'clear sky'" class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/clear sky.png" alt="waether-pic">
+    </div>
+    <div *ngSwitchCase="'light rain'" class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/little rain.png" alt="waether-pic">
+    </div>
+    <div *ngSwitchCase="'scattered clouds'" class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/scattered clouds.png" alt="waether-pic">
+    </div>
+    <div *ngSwitchCase="'few clouds'" class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/few clouds.png" alt="waether-pic">
+    </div>
+    <div *ngSwitchCase="'shower rain'" class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/shower-rain.png" alt="waether-pic">
+    </div>
+    <div *ngSwitchCase="'rain'" class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/rain.png" alt="waether-pic">
+    </div>
+    <div *ngSwitchCase="'thunderstorm'" class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/storm.png" alt="waether-pic">
+    </div>
+    <div *ngSwitchCase="'snow'" class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/snow.png" alt="waether-pic">
+    </div>
+    <div *ngSwitchCase="'mist'" class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/mist.png" alt="waether-pic">
+    </div>
+    <div *ngSwitchCase="'overcast clouds'" class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/cloud.png" alt="waether-pic">
+    </div>
+    <div *ngSwitchDefault class="content__weather-pic" >
+      <img class="content__weather-pic-desc" src="../../assets/img/default.png" alt="waether-pic">
+    </div>
+  
+    <div *ngIf="weatherDegree === '°C'" class="content__weather-temp-value">{{tempValue | number: '1.0-0'}}</div>
+
+    <div *ngIf="weatherDegree === '°F'" class="content__weather-temp-value">{{tempValue * 9/5 + 32 | number: '1.0-0'}}</div>
+
+    <div class="content__weather-degree content__weather-temp-value">{{weatherDegree}}</div>
+
+  </div>
+
+  <div class="content__weather-description">{{weatherDescription | titlecase}}</div>
+
+</div>
